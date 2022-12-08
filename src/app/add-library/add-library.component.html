@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>Libary Registration</h1>
+    <form [formGroup]="formdata" (ngSubmit)="submit(formdata)">
+        <div class="form-group">
+            <mat-form-field appearance="fill">
+                <mat-label for="id"> ID: </mat-label>
+                <input matInput type="number" name="id" class="form-control" formControlName="id">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+        <mat-form-field appearance="fill">
+            <div class="form-group"></div>
+            <mat-label for="bookName">bookName</mat-label><br>
+            <input matInput type="text" name="bookName" class="form-control" formControlName="bookName">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <div *ngIf="formdata.controls['bookName']?.invalid &&(formdata.controls['bookName']?.dirty || formdata.controls)">
+            <div *ngIf="formdata.controls['bookName']?.errors?.required">
+                bookName is required
+            </div>
+         </div>
+        
+
+            
+       
+        <pre></pre>
+
+        <div class="form.group">
+            <mat-form-field appearance="fill">
+                <mat-label for="author">author</mat-label><br>
+                <input matInput type="text" name="author" class="form-control" formControlName="author">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+        <pre></pre>
+        
+        <div class="form.group">
+            <mat-form-field appearance="fill">
+              <mat-label for="genre">genre</mat-label><br>
+              <input matInput type="text" name="genre" class="form-control" formControlName="genre">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+        <pre></pre>
+        <button  type="submit" *ngIf="!data?.showeditbutton" class="btn btn.primary" [disabled]="!formdata.valid">submit</button>
+
+
+    </form>
+    <button  mat-stroked-button *ngIf="data?.showeditbutton" class="btn btn.primary" (click)="update(formdata.value)" (click)="snackbar()" [disabled]="!formdata.valid">update</button>
+
+</div>

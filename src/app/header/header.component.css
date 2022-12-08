@@ -1,0 +1,53 @@
+.header{
+    background-color: aliceblue;
+    display:flex;
+    justify-content: space-around;
+
+   
+}
+h1{
+    text-align: center;
+    font-weight: 200;
+    font-size: xx-large;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.logo{
+  
+    float: left;
+
+}
+.mit{
+    border: 2px solid;
+    border-color: beige;
+    border-radius: 50px;
+    margin-left: 250px;
+}
+button{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+
+}
+#circle{
+    background-color:rgb(21, 27, 140);
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+.sear{
+    margin-top: 130px;
+    position: absolute;
+    right:0;
+    
+    
+
+
+}
+/* .add-btn{
+    margin-left: 30px;
+    margin-top: 20px;
+} */

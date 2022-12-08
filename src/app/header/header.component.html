@@ -1,0 +1,56 @@
+
+
+
+<div class="header">
+    
+      
+    <button style="height: 40px;" (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <img class="logo"  src="http://muraai.com/wp-content/uploads/2019/12/new.png" >
+    
+   <h1 appClimax>Muraai Information Technology pvt Limited</h1>
+   <div class="sear">
+    <mat-form-field >
+        <input matInput type="search" placeholder="search" #search>
+    </mat-form-field>
+    <button style="margin-top:2px" (click)="onSearch(search.value)">search</button>
+
+   </div>
+   
+   
+   <button mat-button [matMenuTriggerFor]="menu" id="circle">
+    {{f|titlecase}} {{l|titlecase}}
+
+</button>
+<mat-menu #menu="matMenu" class="icon">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>{{name}}</mat-card-title><br>
+        </mat-card-header>
+        <mat-divider></mat-divider><br>
+        <mat-icon>account_circle</mat-icon>
+        <mat-card-content>{{a}}</mat-card-content>
+    
+
+    </mat-card>
+</mat-menu> 
+    <button appClimax (click)=" addlibrary()" style="margin-left :100px;">add</button>
+    
+</div>
+
+<mat-sidenav-container style="height: 100%">
+    <mat-sidenav #snav mode="push" style="width: 20%">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/dashboard">Dashboard</a>
+        <a mat-list-item routerLink="/genre" >Genre</a>
+        <a mat-list-item routerLink="/fav" >Favorites</a>
+        <a mat-list-item (click)="logout()">Logout</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+

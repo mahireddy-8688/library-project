@@ -1,0 +1,77 @@
+<mat-drawer-container class="example-container" >
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <button mat-raised-button (click) ="home()">
+      Home
+      </button>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  
+  
+  
+<div class="all">
+
+    <form [formGroup]="formdata" (ngSubmit)="login(formdata.value)">
+
+        <h1>LOGIN PAGE</h1>
+        <div >  
+          <mat-form-field appearance="fill">
+            <mat-label for="username" >Username </mat-label> <br>
+            <input matInput type="text" formControlName="email">
+          </mat-form-field>
+        </div>
+
+        <div >
+          <mat-form-field appearance="fill">
+            <mat-label for="password">Password</mat-label> <br>
+            <input matInput type="password" formControlName="password">
+          </mat-form-field>
+        </div>
+        <button  mat-stroked-button  >Login</button>
+</form>
+
+</div>
+</mat-drawer-container>
+
+
+
+
+
+
+<!-- <div>
+    <div>
+        <mat-drawer-container autosize>
+            <mat-drawer #drawer class="example=sidenav" mode="side">
+                <button mat-raised-button (click)="home()">
+                Home
+                </button>
+            </mat-drawer>
+            <div class="example-sidenav-content">
+                <button type="button" mat-button (click)="drawer.toggle()">
+                    Menu
+                </button>
+
+            </div>
+            <div class="bg">
+                <h1 > Login Page</h1>
+                <form (ngSubmit)="login">
+                    <label>email</label><br>
+                    <input type="text"><br>
+                    
+        
+                    <label>Password</label><br>
+                    <input type="text"><br><br>
+        
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        
+        
+            
+        </mat-drawer-container>
+   
+     -->

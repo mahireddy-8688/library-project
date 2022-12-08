@@ -1,0 +1,98 @@
+<button mat-raised-button (click)="isEditable = !isEditable">
+    {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+  </button>
+  
+  <mat-stepper  #stepper>
+    <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+      <form [formGroup]="firstFormGroup" (ngSubmit)="form1()"#formone="ngForm">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>bookName</mat-label>
+          <input matInput formControlName="bookName" placeholder="Last name, First name" required>
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+          <mat-label>id</mat-label>
+          <input matInput formControlName="id" placeholder="Ex. 123"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+        <form [formGroup]="secondFormGroup" (ngSubmit)="form2()"#formtwo="ngForm">
+          <ng-template matStepLabel>author</ng-template>
+          <mat-form-field appearance="fill">
+             <mat-label>author</mat-label>
+             <input matInput formControlName="author" placeholder="rama"
+                   required>
+          </mat-form-field><br>
+          <mat-form-field appearance="fill">
+            <mat-label>genre</mat-label>
+            <input matInput formControlName="genre" placeholder="love"
+                  required>
+         </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup" [editable]="isEditable" >
+        <form [formGroup]="thirdFormGroup" (ngSubmit)="form3()"#formthree="ngForm" >
+          <ng-template matStepLabel>Gender</ng-template>
+          <!-- <mat-form-field appearance="fill">
+             <mat-label>Gender</mat-label>
+            <input matInput formControlName="Gender" placeholder="912345678"
+                  required>
+         </mat-form-field> -->
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Male</mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+          </mat-radio-group><br><br>
+          <button mat-button matStepperPrevious>Back</button>
+             <button mat-button matStepperNext>Next</button>
+         </form>
+        </mat-step>
+        
+
+   <mat-step [stepControl]="fourthFormGroup">
+            <form [formGroup]="fourthFormGroup" (ngSubmit)="form4()"#formfour="ngForm">
+              <ng-template matStepLabel>Select country</ng-template>
+                <mat-form-field appearance="fill">
+                    <mat-label>country</mat-label>
+                    
+                    <input matInput formControlName="country" placeholder=india
+                          required>
+                    <mat-select [formControl]="country" name="country">
+                        <mat-option *ngFor="let country of countries" [value]="country">
+                            {{country.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field><br>
+                <mat-form-field appearance="fill">
+                    <mat-label>State</mat-label>
+                    <mat-select [formControl]="state" name="state">
+                        <mat-option *ngFor="let state of states" [value]="state">
+                            {{state.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field><br>
+                <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+
+                
+    <!-- <mat-step> -->
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-stroked-button type="submit" (click)="formone.ngSubmit.emit();formtwo.ngSubmit.emit();
+        formthree.ngSubmit.emit(); formfour.ngSubmit.emit();">submit</button>
+        <!-- <button (click)="dashboard"></button> -->
+      </div>
+    <!-- </mat-step> -->
+  
+  

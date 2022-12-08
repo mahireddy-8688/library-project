@@ -1,0 +1,13 @@
+.example-card{
+    max-width: 400px;
+}
+.example-header-image{
+    background-size: cover;
+}
+.row{
+    display:inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+

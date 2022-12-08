@@ -1,0 +1,102 @@
+{
+  "ELEMENT_DATA": [
+    {
+      "bookName": "The Indian Story",
+      "id": "1",
+      "author": "Bimaljalal",
+      "genre": "Creative non Fiction",
+      "fav": false
+    },
+    {
+      "bookName": "A Palce Called Home",
+      "id": "2",
+      "author": "Preeti Shenoy",
+      "genre": "Romance",
+      "fav": false
+    },
+    {
+      "bookName": "Queen Of firre",
+      "id": "4",
+      "author": "DevikaRangachari",
+      "genre": "Fantasyfiction",
+      "fav": false
+    },
+    {
+      "bookName": "Decoding Indian babudom",
+      "id": "5",
+      "author": "Ashwani shrivastava",
+      "genre": "fantasyfiction",
+      "fav": true
+    },
+    {
+      "bookName": "HearYourSelf",
+      "id": "6",
+      "author": "PremRa wat",
+      "genre": "Self-help book",
+      "fav": false
+    },
+    {
+      "bookName": "Moonson",
+      "id": "7",
+      "author": "SAhitya Akademi",
+      "genre": "fiction",
+      "fav": true
+    },
+    {
+      "bookName": "Tomb Of Sand",
+      "id": "8",
+      "author": "Geethaanjali Shree's",
+      "genre": "Domestic fiction"
+    },
+    {
+      "bookName": "Atal Bihari Vajpaye",
+      "id": "9",
+      "author": "Sagarika Ghose",
+      "genre": "Biograpy"
+    },
+    {
+      "bookName": "Fear Less Governance",
+      "id": "10",
+      "author": "Dr.Kiranbedi",
+      "genre": "Leadership"
+    },
+    {
+      "bookName": "rama",
+      "id": "11",
+      "author": "val",
+      "genre": "history"
+    }
+  ],
+  "genre_data": [
+    {
+      "genre": "Drama",
+      "image": "https://thumbs.dreamstime.com/b/theatre-crying-smiling-masks-hazy-light-52144119.jpg",
+      "about": "The drama genre is strongly based in a character, or characters, that are in conflict at a crucial moment in their lives. Most dramas revolve around families and often have tragic or painful resolutions."
+    },
+    {
+      "genre": "Fantasy",
+      "image": "https://upload.wikimedia.org/wikipedia/en/9/93/AGameOfThrones.jpg",
+      "about": "A Game of Thrones takes place over the course of one year on or near the fictional continent of Westeros. The story begins when King Robert visits the northern castle Winterfell to ask Ned Stark to be his right-hand assistant, or Hand of the King. The previous Hand, Jon Arryn, died under suspicious circumstances."
+    },
+    {
+      "genre": "historical fiction.",
+      "image": "https://m.media-amazon.com/images/I/51seH-SzjuL.jpg",
+      "about": "Historical Fiction is set in a real place, during a culturally recognizable time. The details and the action in the story can be a mix of actual events and ones from the author's imagination as they fill in the gaps. Characters can be pure fiction or based on real people (often, it's both)"
+    },
+    {
+      "genre": "Folklore",
+      "image": "https://m.media-amazon.com/images/I/71yao-uqpnL.jpg",
+      "about": "Folklore (or lore) consists of legends, myths, music, oral history, proverbs, jokes, popular beliefs, fairy tales, stories, tall tales, and customs that are the traditions of a culture, subculture, or group."
+    },
+    {
+      "genre": " Poetry.",
+      "image": "https://m.media-amazon.com/images/I/71RD+pEvvlL.jpg",
+      "about": "a poetry book is any collection of poems longer than 48 pages. There's no standard for how many poems go into a collection; it's much more important that the collection feels “finished” to the poet."
+    },
+    {
+      "genre": " Thriller",
+      "image": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1589302519-51PeVt0WznL.jpg",
+      "about": "A thriller is a type of mystery with a few key differences. As its name suggests, thrillers tend to be action-packed and fast-paced with moments full of tension, anxiety, and fear. Without fail, they are plot-driven stories."
+    }
+  ]
+}
