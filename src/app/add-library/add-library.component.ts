@@ -1,16 +1,19 @@
-import { Component, Inject, inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, inject, Input, OnInit,OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SampleServiceService } from '../sample-service.service';
 import {MatFormField, MatFormFieldAppearance,MatFormFieldControl,MatFormFieldDefaultOptions} from '@angular/material/form-field';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Subject, takeUntil } from 'rxjs';
 @Component({
   selector: 'app-add-library',
   templateUrl: './add-library.component.html',
   styleUrls: ['./add-library.component.css']
 })
-export class AddLibraryComponent implements OnInit {
+export class AddLibraryComponent implements OnInit,OnDestroy {
   formdata:any;
+  OnDestroy$=new Subject<boolean>;
+
   
 
   constructor(public dialog: MatDialog, private service:SampleServiceService,@Inject(MAT_DIALOG_DATA) public data:any,private _snackBar:MatSnackBar){}
@@ -21,14 +24,17 @@ export class AddLibraryComponent implements OnInit {
       author:new FormControl(this.data?.author??""),
       genre: new FormControl(this.data?.genre??""),
     });
-    console.log(this.data)
+   
     
+  }
+  ngOnDestroy(): void {
+    this.OnDestroy$.next(true);
+    this.OnDestroy$.complete();
   }
 
 
   update(data:any){
-    console.log("---d",data)
-    this.service.updateElement_Data(data).subscribe(abc=>{
+    this.service.updateElement_Data(data).pipe(takeUntil(this.OnDestroy$)).subscribe(()=>{
        this.dialog.closeAll();
         
     })
@@ -36,10 +42,8 @@ export class AddLibraryComponent implements OnInit {
 
 
   submit(data:any){
-    console.log('--',data)
 
-    this. service.CreateElement_Data({...data.value, id:data.value["id"]}).subscribe(s => {
-    });
+    this. service.CreateElement_Data({...data.value, id:data.value["id"]}).pipe(takeUntil(this.OnDestroy$)).subscribe();
     this.dialog.closeAll();
    
   }

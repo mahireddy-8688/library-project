@@ -12,8 +12,9 @@ export class FavComponent {
   dataSource:Observable<any>=of([{}])
   constructor (private service:SampleServiceService){}
   ngOnInit(){
+    this.service.getElement_Data()
     this.dataSource=this.service.dataEvent$ .pipe(map((a:any)=>{
-      console.log('---',a);
+      
       return(a.filter((n:any)=>n.fav))
     }))
    
