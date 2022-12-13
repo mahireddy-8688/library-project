@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Data } from '@angular/router';
 import { filter } from 'rxjs';
+import { Comedy, ELEMENT_DATA } from './model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SampleServiceService {
-  data: any;
+  data: ELEMENT_DATA[]=[];
   iddetails(id: any) {
     throw new Error('Method not implemented.');
   }
@@ -19,7 +20,7 @@ export class SampleServiceService {
   private message= new BehaviorSubject<string>('default message')
   getMessage=this.message.asObservable();
 
-  private dataSubject$: Subject<Object> = new Subject();
+  private dataSubject$: Subject<ELEMENT_DATA[]> = new Subject();
   dataEvent$=this.dataSubject$.asObservable();
 
   API_URL="http://localhost:3000/ELEMENT_DATA";
@@ -30,6 +31,7 @@ export class SampleServiceService {
   Romance_URL=" http://localhost:3000/Romance"
 
   constructor(private http: HttpClient) {}
+  
   UpdateMessage(msg:string){
     this.message.next(msg);
   }
@@ -37,7 +39,7 @@ export class SampleServiceService {
   
   
   getElement_Data(){
-     this.http.get(this.API_URL).subscribe(val=>{
+     this.http.get(this.API_URL).subscribe((val:any)=>{
       this.dataSubject$.next(val);
       this.data = val;
     })
@@ -64,18 +66,18 @@ export class SampleServiceService {
   getGenre_card(){
     return this.http.get(this.genre_URL)
   }
-  getComedy(){
-    return this.http.get(this.Comedy_URL)
+  getComedy():Observable<Comedy[]>{
+    return this.http.get<Comedy[]>(this.Comedy_URL)
   }
-  getThriller(){
-    return this.http.get(this.Thriller_URL)
+  getThriller():Observable<Comedy[]>{
+    return this.http.get<Comedy[]>(this.Thriller_URL)
   }
-  getRomance(){
-    return this.http.get(this.Romance_URL)
+  getRomance():Observable<Comedy[]>{
+    return this.http.get<Comedy[]>(this.Romance_URL)
   }
 
 
-  updateFavorites(data: any) {
+  updateFavorites(data:ELEMENT_DATA) {
     const newData = {
       ...data,
       fav: !data.fav

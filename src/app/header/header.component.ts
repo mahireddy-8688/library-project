@@ -3,26 +3,26 @@ import { AddLibraryComponent } from '../add-library/add-library.component';
 import { SampleServiceService } from '../sample-service.service';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { SteperComponent } from '../steper/steper.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  dataSource: any;
-  a:any
+  mail:any
   name:any
-  f:any
-  l:any
-  router: any;
+  first:any
+  last:any
   
-  constructor(private dailog: MatDialog, private service:SampleServiceService){}
+  
+  constructor(private dailog: MatDialog, private service:SampleServiceService,private route:Router){}
 
   ngOnInit():void{
-    this.a=localStorage.getItem("email")
-    this.name=this.a?.split('.').join(' ').split('@',1).join('')
-    this.f=((this.name?.split(' ',1))[0])[0]
-    this.l=((this.name?.split(' ',2))[1])[0]
+    this.mail=localStorage.getItem("email")
+    this.name=this.mail?.split('.').join(' ').split('@',1).join('')
+    this.first=((this.name?.split(' ',1))[0])[0]
+    this.last=((this.name?.split(' ',2))[1])[0]
    
   }
   addlibrary(){
@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
   logout(){
 
     localStorage.clear();
-    this.router.navigate(['']);
+    this.route.navigate(['']);
   }
   onSearch(value:any){
     this.service.searchItem(value);

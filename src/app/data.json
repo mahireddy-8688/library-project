@@ -72,51 +72,60 @@
     {
       "title": "American Cheese",
       "image": "https://pyxis.nymag.com/v1/imgs/78b/634/5b5ab1562dc21c1c0da930e368792d21f9-american-cheese-berkowitz.rdeep-vertical.w460.jpg",
-      "about": " Comedy is really just the intersection point between surprise, revelation, and joy, so it can be found anywhere. One can argue that life is innately a comedy, and so it’s an absolute delight when a true story well told is naturally funny. Joe Berkowitz seeks out these stories by exploring scarcely documented subcultures, such as the world of competitive pun-making in his 2017 book Away With Words"
+      "about": " Comedy is really just the intersection point between surprise, revelation, and joy, so it can be found anywhere. One can argue that life is innately a comedy, and so it’s an absolute delight when a true story well told is naturally funny. Joe Berkowitz seeks out these stories by exploring scarcely documented subcultures, such as the world of competitive pun-making in his 2017 book Away With Words",
+      "genre":"comedy"
     },
     {
       "title": "Rachel Bloom",
       "image": "https://pyxis.nymag.com/v1/imgs/7e3/984/f9a89a62c4e1ef1abe70db1fe6c211f0d2-rachel-bloom-i-want-to-be-where-the-norm.rdeep-vertical.w460.jpg",
-      "about": "t seems like every famous person eventually gets to write a collection of humorous essays. The best books of this nature are the self-deprecating ones about the individual’s rocky path to success and/or self-actualization, and Rachel Bloom’s is exactly that. Her comic voice lends itself well to this skewed Sedaris format — whether it’s Crazy Ex-Girlfriend"
+      "about": "t seems like every famous person eventually gets to write a collection of humorous essays. The best books of this nature are the self-deprecating ones about the individual’s rocky path to success and/or self-actualization, and Rachel Bloom’s is exactly that. Her comic voice lends itself well to this skewed Sedaris format — whether it’s Crazy Ex-Girlfriend",
+      "genre":"comedy"
     },
     {
       "title": "Slouchers",
       "image": "https://pyxis.nymag.com/v1/imgs/0af/660/07386478f566aa4bacd5c4fb9d9376f6d8-slouchers.rdeep-vertical.w460.jpg",
-      "about": "Mike Sacks, already a pioneer in taking comedy seriously with his insightful comedian interview collections And Here’s the Kicker (2009) and Poking a Dead Frog (2014), has created another unique and fresh contribution to the culture: fake movie novelizations."
+      "about": "Mike Sacks, already a pioneer in taking comedy seriously with his insightful comedian interview collections And Here’s the Kicker (2009) and Poking a Dead Frog (2014), has created another unique and fresh contribution to the culture: fake movie novelizations.",
+      "genre":"comedy"
     }
   ],
   "Thriller": [
     {
       "title": " And Then There Were None by Agatha Christie",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1409600899l/9723667.jpg",
-      "about": "Perhaps the best-known murder mystery of all time, And Then There Were None absolutely epitomizes suspense. Ten strangers meet on an isolated British isle at the behest of their oddly absent hosts. But when they start dying off one by one — in disturbing parallels to a children’s nursery rhyme — they realize that this is no vacation, but a collective execution."
+      "about": "Perhaps the best-known murder mystery of all time, And Then There Were None absolutely epitomizes suspense. Ten strangers meet on an isolated British isle at the behest of their oddly absent hosts. But when they start dying off one by one — in disturbing parallels to a children’s nursery rhyme — they realize that this is no vacation, but a collective execution.",
+      "genre":"Thriller"
     },
     {
       "title": "A Simple Favor",
       "image": "https://m.media-amazon.com/images/I/51JuncJh3UL.jpg",
-      "about": "If you’ve seen the trailers for the recent adaptation starring Anna Kendrick and Blake Lively, you know that A Simple Favor smoothly combines 1950s-style noir and twenty-first-century drama. Stephanie is a widowed mommy vlogger whose life suddenly gets a lot more interesting when she meets Emily"
+      "about": "If you’ve seen the trailers for the recent adaptation starring Anna Kendrick and Blake Lively, you know that A Simple Favor smoothly combines 1950s-style noir and twenty-first-century drama. Stephanie is a widowed mommy vlogger whose life suddenly gets a lot more interesting when she meets Emily",
+      "genre":"Thriller"
     },
     {
       "title": "Baby Teeth",
       "image": "https://m.media-amazon.com/images/I/41LXEFn0GTL.jpg",
-      "about": "This 2018 novel follows a dysfunctional family with a terror of a daughter (you might call her a bad seed). Hanna is seven years old and has never spoken, but that’s the least of her mother’s worries; you’d probably feel the same if your little girl were trying to kill you"
+      "about": "This 2018 novel follows a dysfunctional family with a terror of a daughter (you might call her a bad seed). Hanna is seven years old and has never spoken, but that’s the least of her mother’s worries; you’d probably feel the same if your little girl were trying to kill you",
+      "genre":"Thriller"
     }
   ],
   "Romance": [
     {
       "title": "Pride and Prejudice",
       "image": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1548885713-51J1iMDw4lL.jpg?crop=1xw:0.999xh;center,top&resize=768:*",
-      "about": "Arguably the greatest romance novel of all time, Austen's Pride and Prejudice follows the opinionated heroine, Elizabeth Bennet, as she frequently finds herself at odds with her beau, the uptight Mr. Darcy. In 2006, Keira Knightley earned an Oscar nomination for her portrayal of Bennet on the big screen."
+      "about": "Arguably the greatest romance novel of all time, Austen's Pride and Prejudice follows the opinionated heroine, Elizabeth Bennet, as she frequently finds herself at odds with her beau, the uptight Mr. Darcy. In 2006, Keira Knightley earned an Oscar nomination for her portrayal of Bennet on the big screen.",
+      "genre":"Romance"
     },
     {
       "title": "Jane Eyre",
       "image": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1548887142-41oRRotv2KL.jpg?crop=0.958xw:1xh;center,top&resize=768:*",
-      "about": "By exploring themes such as religion, sexuality, and classism, Jane Eyre was a groundbreaking novel during its 19th-century release. Still revered as one of the genre's first novels, Brontë's story of the titular character, Jane, and her maturing emotions and love for her broody boss, Mr. Rochester, is one that readers still have a hard time putting down."
+      "about": "By exploring themes such as religion, sexuality, and classism, Jane Eyre was a groundbreaking novel during its 19th-century release. Still revered as one of the genre's first novels, Brontë's story of the titular character, Jane, and her maturing emotions and love for her broody boss, Mr. Rochester, is one that readers still have a hard time putting down.",
+      "genre":"Romance"
     },
     {
       "title": "Shanna",
       "image": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1611694526-51A9RBVnJ8L.jpg?crop=1.00xw:0.932xh;0,0.0200xh&resize=768:*",
-      "about": "A disclaimer—an OG bodice ripper, The Wolf and the Dove was written in the 1970s, and it shows. Readers today may find it a little too long at over 600 pages—and back then, the foundations of consent that are now commonplace in the 21st century were not at the forefront. But with that said, Woodiwiss's work is one of the original historical romance classics, providing a pathway for many of today's favorite reads."
+      "about": "A disclaimer—an OG bodice ripper, The Wolf and the Dove was written in the 1970s, and it shows. Readers today may find it a little too long at over 600 pages—and back then, the foundations of consent that are now commonplace in the 21st century were not at the forefront. But with that said, Woodiwiss's work is one of the original historical romance classics, providing a pathway for many of today's favorite reads.",
+      "genre":"Romance"
     }
   ]
 }

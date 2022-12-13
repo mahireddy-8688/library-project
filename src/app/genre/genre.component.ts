@@ -1,6 +1,7 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import { NavigationStart, RouteConfigLoadEnd, Router } from '@angular/router';
-import { filter, Subject, takeUntil } from 'rxjs';
+import { filter, Observable, of, Subject, takeUntil } from 'rxjs';
+import { Comedy } from '../model';
 import { SampleServiceService } from '../sample-service.service';
 
 @Component({
@@ -10,11 +11,8 @@ import { SampleServiceService } from '../sample-service.service';
 })
 export class GenreComponent  implements OnInit,OnDestroy{
   OnDestroy$=new Subject<boolean>
-
-  genreData:any
-  Comedy:any
-  Thriller:any
-  Romance:any
+ 
+  genreData: Observable<Comedy[]>=of([])
 
   constructor(private service:SampleServiceService , private route:Router){}
   ngOnInit():void{  
@@ -22,7 +20,7 @@ export class GenreComponent  implements OnInit,OnDestroy{
       console.log('----',urlLink);
       
       if(urlLink.url.includes('Comedy')) {
-        this.genreData = this.service.getComedy()
+        this.genreData= this.service.getComedy()
        }
        else if(urlLink.url.includes('Thriller')) {
         this.genreData= this.service.getThriller()
