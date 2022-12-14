@@ -67,7 +67,7 @@ this.country.valueChanges.pipe(takeUntil(this.OnDestroy$)).subscribe((country:an
   form4(){
     (this.fourthFormGroup.value);
     this.service.CreateElement_Data({...this.firstFormGroup.value,...this.secondFormGroup.value}).pipe(takeUntil(this.OnDestroy$)).subscribe(a=>{
-      console.log('---',a);
+    
     })
     this.dailog.closeAll();
   }

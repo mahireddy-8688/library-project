@@ -19,7 +19,7 @@ export class GenreComponent  implements OnInit,OnDestroy{
   constructor(private service:SampleServiceService , private route:Router){}
   ngOnInit():void{  
     this.route.events.pipe(filter(navigate=>navigate instanceof NavigationStart)).pipe(takeUntil(this.OnDestroy$)).subscribe((urlLink:any)=>{
-      console.log('----',urlLink);
+     
       
       if(urlLink.url.includes('Comedy')) {
         this.genreData = this.service.getComedy()
