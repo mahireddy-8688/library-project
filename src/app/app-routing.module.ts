@@ -28,7 +28,20 @@ const routes: Routes = [{
 
   },
   {
-    path:'genre', canActivate:[guard],component:GenreComponent
+    path:'genre', canActivate:[guard],component:GenreComponent,
+    children:
+    [{
+      path:'Comedy',canActivate:[guard],component:GenreComponent
+    },
+    {
+      path:'Thriller',canActivate:[guard],component:GenreComponent
+
+    },
+    {
+      path:'Romance',canActivate:[guard],component:GenreComponent
+    }
+    
+    ]
   },
   {
     path:'fav', canActivate:[guard],component:FavComponent

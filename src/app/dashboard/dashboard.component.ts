@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,OnDestroy} from '@angular/core';
 import { ɵNgNoValidate } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable, of, pipe, Subject, takeUntil } from 'rxjs';
 import { AddLibraryComponent } from '../add-library/add-library.component';
 import { SampleServiceService } from '../sample-service.service';
 import { Inject } from '@angular/core';
@@ -13,8 +13,11 @@ import { DialogRef } from '@angular/cdk/dialog';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit ,OnDestroy{
   displayedColumns = ["id","bookName","author","genre","star","fav"];
+  OnDestroy$=new Subject<boolean>
+
+
  
   
 
@@ -36,15 +39,16 @@ export class DashboardComponent implements OnInit {
       {...element,showeditbutton:true}
       
 });
-
-
-dialogRef.afterClosed().subscribe(result=>{
-})
+dialogRef.afterClosed().pipe(takeUntil(this.OnDestroy$)).subscribe()
   }
+  ngOnDestroy():void{
+    this.OnDestroy$.next(true);
+    this.OnDestroy$.complete();
+  }
+  
   deleteRow(id:any){
-    this.service.deleteElement_Data(id).subscribe();
+    this.service.deleteElement_Data(id).pipe(takeUntil(this.OnDestroy$)).subscribe();
   }
-
 
   genre(){
     this.router.navigate(['genre'])
@@ -53,7 +57,7 @@ dialogRef.afterClosed().subscribe(result=>{
     this.router.navigate(['fav'])
   }
   updatestar(element:any){
-    this.service.updateFavorites(element).subscribe();
+   this.service.updateFavorites(element).pipe(takeUntil(this.OnDestroy$)).subscribe();
       window.location.reload()
 
   }

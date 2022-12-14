@@ -35,6 +35,8 @@ import { FavComponent } from './fav/fav.component';
 import { LayoutComponent } from './layout/layout.component';
 import {MatListModule} from '@angular/material/list';
 import { ClimaxDirective } from './climax.directive';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { StoreModule } from '@ngrx/store';
 
 
 
@@ -77,7 +79,9 @@ import { ClimaxDirective } from './climax.directive';
     MatSelectModule,
     MatRadioModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule,
+    StoreModule.forRoot({}, {})
   
   ],
   providers: [ SampleServiceService, guard],

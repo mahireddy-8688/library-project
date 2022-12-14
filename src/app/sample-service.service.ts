@@ -24,7 +24,10 @@ export class SampleServiceService {
 
   API_URL="http://localhost:3000/ELEMENT_DATA";
   login_URL="https://reqres.in/api/login";
-  genre_URL=" http://localhost:3000/genre_data"
+  genre_URL=" http://localhost:3000/genre_data";
+  Comedy_URL=" http://localhost:3000/Comedy";
+  Thriller_URL=" http://localhost:3000/Thriller";
+  Romance_URL=" http://localhost:3000/Romance"
 
   constructor(private http: HttpClient) {}
   UpdateMessage(msg:string){
@@ -61,6 +64,15 @@ export class SampleServiceService {
   getGenre_card(){
     return this.http.get(this.genre_URL)
   }
+  getComedy(){
+    return this.http.get(this.Comedy_URL)
+  }
+  getThriller(){
+    return this.http.get(this.Thriller_URL)
+  }
+  getRomance(){
+    return this.http.get(this.Romance_URL)
+  }
 
 
   updateFavorites(data: any) {
@@ -87,7 +99,4 @@ export class SampleServiceService {
 
 
 
-//   getUsers() {
-//     return this.http.get('https://reqres.in/api/users?page=2')
-//   }
-// }
+

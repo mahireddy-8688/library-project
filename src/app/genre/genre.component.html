@@ -1,5 +1,5 @@
 <div class="row row-cols-1 row-cols-md-3">
-    <div class="col-mb-4"*ngFor="let card of genreData">
+    <div class="col-mb-4"*ngFor="let card of genreData | async ">
         <mat-card class="example-card">
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
@@ -13,3 +13,4 @@
         </mat-card>
     </div>
 </div> 
+<router-outlet></router-outlet>

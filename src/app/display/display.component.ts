@@ -1,8 +1,8 @@
 import { outputAst } from '@angular/compiler';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output,OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject, takeUntil } from 'rxjs';
 import { AddLibraryComponent } from '../add-library/add-library.component';
 import { SampleServiceService } from '../sample-service.service';
 
@@ -11,10 +11,9 @@ import { SampleServiceService } from '../sample-service.service';
   templateUrl: './display.component.html',
   styleUrls: ['./display.component.css']
 })
-export class DisplayComponent implements OnInit  {
-
-  
+export class DisplayComponent implements OnInit,OnDestroy{
   iddetails: any;
+  OnDestroy$=new Subject<boolean>
   out: any;
   constructor (private dialog:MatDialog, private service:SampleServiceService,private route:ActivatedRoute, private router:Router){}
   editRow(iddetails:any){
@@ -27,22 +26,24 @@ export class DisplayComponent implements OnInit  {
 });
 }
 deleteRow(id:any){
-  this.service.deleteElement_Data(id).subscribe(data=>{
+  this.service.deleteElement_Data(id).pipe(takeUntil(this.OnDestroy$)).subscribe(()=>{
     this.router.navigate(['/dashboard'])
   });
  
 
 }
-
-
   ngOnInit(): void {
     this.service.getdetails(this.route.snapshot.params['id'])
-    .subscribe((abc: any)=>{
-      this.iddetails=abc
-      console.log('xyz',abc)
+    .pipe(takeUntil(this.OnDestroy$)) .subscribe((details: any)=>{
+      this.iddetails=details
 
     }
     )
 
-}}
+}
+ngOnDestroy(): void {
+  this.OnDestroy$.next(true);
+  this.OnDestroy$.complete();
+}
+}
 
