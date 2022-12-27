@@ -18,7 +18,7 @@
    
    
    <button mat-button [matMenuTriggerFor]="menu" id="circle">
-    {{f|titlecase}} {{l|titlecase}}
+    {{first|titlecase}} {{last|titlecase}}
 
 </button>
 <mat-menu #menu="matMenu" class="icon">
@@ -28,7 +28,7 @@
         </mat-card-header>
         <mat-divider></mat-divider><br>
         <mat-icon>account_circle</mat-icon>
-        <mat-card-content>{{a}}</mat-card-content>
+        <mat-card-content>{{mail}}</mat-card-content>
     
 
     </mat-card>
@@ -56,7 +56,7 @@
       
 
         <a mat-list-item routerLink="/fav" (click)="snav.toggle()">Favorites</a>
-        <a mat-list-item (click)="logout()">Logout</a>
+        <a mat-list-item routerLink="/" (click)="logout()">Logout</a>
       </mat-nav-list>
     </mat-sidenav>
 

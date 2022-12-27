@@ -7,6 +7,7 @@ import { AddLibraryComponent } from '../add-library/add-library.component';
 import { SampleServiceService } from '../sample-service.service';
 import { Inject } from '@angular/core';
 import { DialogRef } from '@angular/cdk/dialog';
+import { ELEMENT_DATA } from '../model';
 
 @Component({
   selector: 'app-dashboard',
@@ -23,7 +24,15 @@ export class DashboardComponent implements OnInit ,OnDestroy{
 
 
   constructor(private service:SampleServiceService ,private router:Router,private dialog:MatDialog,){}
-  dataSource:Observable<any>=of([{}])
+  dataSource:Observable<ELEMENT_DATA[]>=of([{
+    id:'',
+    author:'',
+    bookName:'',
+    fav:false,
+    genre:''
+
+
+  }])
   ngOnInit(){
     this.service.getElement_Data()
     this.dataSource=this.service.dataEvent$
